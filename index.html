@@ -1,0 +1,82 @@
+<!doctype html>
+<html class="no-js" lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <title>Ip address tracker master</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+  <!-- leaf flet js -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+  <!-- main css-->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <main>
+    <div class="home__background">
+      <div class="home">
+        <h1>IP Address Tracker</h1>
+        <div class="input__container">
+          <input type="text">
+          <button type="button">></button>
+        </div>
+        <div class="data__container">
+          <div class="data__pair">
+            <p class="data__title">
+              IP Address
+            </p>
+            <p id="ip-address" class="data__data">
+              192.168.0.1
+            </p>
+          </div>
+          <div class="data__pair">
+            <p class="data__title">
+              Location
+            </p>
+            <p id="location" class="data__data">
+              Brooklyn, N1 002132
+            </p>
+          </div>
+          <div class="data__pair">
+            <p class="data__title">
+              Timezone
+            </p>
+            <p id="timezone" class="data__data">
+              UTC -5:00
+            </p>
+          </div>
+          <div class="data__pair">
+            <p class="data__title">
+              ISP
+            </p>
+            <p id="isp" class="data__data">
+              Space x Starlink
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="map"></div>
+  </main>
+
+  <!-- scripts -->
+  <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

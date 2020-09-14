@@ -1,0 +1,83 @@
+@import "variables";
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+html {
+  font-size: 16px;
+  text-align: center;
+}
+
+body {
+  font-size: 1rem;
+  font-family: 'Rubik', sans-serif;
+  color: $black;
+}
+
+.home__background {
+  z-index: -2;
+  background-image: url(../images/pattern-bg.png);
+  background-size: cover;
+  border: 1px solid transparent;
+
+
+  .home {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    h1 {
+      color: $white;
+    }
+
+    .input__container {
+      display: flex;
+      padding: 0 $padMobile;
+      border-radius: $borderRadius;
+      margin-bottom: 1.5rem;
+
+      input {
+        width: 100%;
+        height: 2.5rem;
+        border-radius: $borderRadius 0 0 $borderRadius;
+      }
+
+      button {
+        border-radius: 0 $borderRadius $borderRadius 0;
+        width: 3rem;
+        background: $black;
+        color: $white;
+      }
+    }
+
+    .data__container {
+      background: $white;
+      margin: 0 $padMobile;
+      border-radius: $borderRadius;
+      padding: 1rem;
+      z-index: 9999;
+
+      .data__pair {
+        margin: 1.5rem 0;
+
+        .data__title {
+          color: $darkGray;
+          font-size: .9rem;
+          font-weight: 500;
+          margin: 0;
+        }
+
+        .data__data {
+          margin: .4rem;
+          font-weight: 700;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+#map {
+  width: 100%;
+  height: 35rem;
+  z-index: 0;
+  margin-top: -10rem;
+}
