@@ -39,18 +39,18 @@ body {
   display: -ms-flexbox;
   display: flex;
   padding: 0 1rem;
-  border-radius: 10px;
+  border-radius: 0.8rem;
   margin-bottom: 1.5rem;
 }
 
 .home__background .home .input__container input {
   width: 100%;
   height: 2.5rem;
-  border-radius: 10px 0 0 10px;
+  border-radius: 0.8rem 0 0 0.8rem;
 }
 
 .home__background .home .input__container button {
-  border-radius: 0 10px 10px 0;
+  border-radius: 0 0.8rem 0.8rem 0;
   width: 3rem;
   background: #000;
   color: #fff;
@@ -59,7 +59,7 @@ body {
 .home__background .home .data__container {
   background: #fff;
   margin: 0 1rem;
-  border-radius: 10px;
+  border-radius: 0.8rem;
   padding: 1rem;
   z-index: 9999;
 }
@@ -86,5 +86,32 @@ body {
   height: 35rem;
   z-index: 0;
   margin-top: -10rem;
+}
+
+@media (min-width: 1000px) {
+  .data__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin: auto !important;
+    min-width: 60rem;
+    width: 80%;
+  }
+  .data__container data__pair {
+    width: 25%;
+    margin: 0.5px;
+  }
+  #map {
+    height: 35rem;
+    margin-top: -5rem;
+  }
+  .input__container {
+    margin: auto;
+  }
+  .input__container input {
+    min-width: 30rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */

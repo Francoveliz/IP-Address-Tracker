@@ -15,6 +15,8 @@
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
   <!-- leaf flet js -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
   <!-- main css-->
@@ -30,8 +32,8 @@
       <div class="home">
         <h1>IP Address Tracker</h1>
         <div class="input__container">
-          <input type="text">
-          <button type="button">></button>
+          <input id="ip-input" type="text">
+          <button id="ip-search" type="button"><i class="fas fa-chevron-right"></i></button>
         </div>
         <div class="data__container">
           <div class="data__pair">

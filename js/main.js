@@ -2,6 +2,7 @@ let index = (function () {
   return {
     init: function () {
       this.cacheDom();
+      this.bindEvents();
       this.getIp();
     },
     cacheDom: function () {
@@ -9,6 +10,14 @@ let index = (function () {
       this.location = document.getElementById("location");
       this.timezone = document.getElementById("timezone");
       this.isp = document.getElementById("isp");
+      this.btnSearch = document.getElementById("ip-search");
+      this.ipInput = document.getElementById("ip-input");
+    },
+    bindEvents: function () {
+      this.btnSearch.addEventListener("click", this.setSearch.bind(this));
+    },
+    setSearch: function () {
+      this.getAltitudeAndLatitude(this.ipInput.value);
     },
     getIp: function () {
       fetch("https://api.ipify.org")
@@ -20,14 +29,14 @@ let index = (function () {
       fetch("https://geo.ipify.org/api/v1?apiKey=" + apiKey + "&ipAddress=" + ip)
         .then(response => response.json())
         .then(data => {
-          console.log(data);
           this.setData(
             data.ip,
             data.location.city,
             data.location.timezone,
             data.isp)
           this.setMap(data.location.lat, data.location.lng)
-        });
+        })
+        .catch(console.log("error"));
     },
     setMap: function (alt, lat) {
       //init map

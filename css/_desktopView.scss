@@ -1,0 +1,28 @@
+@media (min-width:1000px) {
+  .data__container {
+    display: flex;
+    justify-content: space-around;
+    margin: auto !important;
+    min-width: 60rem;
+    width: 80%;
+
+
+    data__pair {
+      width: 25%;
+      margin: 0.5px;
+    }
+  }
+
+  #map {
+    height: 35rem;
+    margin-top: -5rem;
+  }
+
+  .input__container {
+    margin: auto;
+
+    input {
+      min-width: 30rem;
+    }
+  }
+}
