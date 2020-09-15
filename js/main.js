@@ -3,6 +3,7 @@ let index = (function () {
     init: function () {
       this.cacheDom();
       this.bindEvents();
+      this.setMap(51.505, -0.09);
       this.getIp();
     },
     cacheDom: function () {
@@ -25,32 +26,54 @@ let index = (function () {
         .then(data => this.getAltitudeAndLatitude(data));
     },
     getAltitudeAndLatitude: function (ip) {
+      this.ipInput.value = ip;
       let apiKey = "at_nC3JfmQr40CQFHIWFXQnqBmPcUUsO";
       fetch("https://geo.ipify.org/api/v1?apiKey=" + apiKey + "&ipAddress=" + ip)
         .then(response => response.json())
         .then(data => {
-          this.setData(
+          this.renderHtml(
             data.ip,
             data.location.city,
             data.location.timezone,
-            data.isp)
-          this.setMap(data.location.lat, data.location.lng)
+            data.isp,
+            data.location.lat,
+            data.location.lng
+          );
         })
         .catch(console.log("error"));
     },
-    setMap: function (alt, lat) {
+    renderHtml: function (ip, city, timezone, isp, lat, lng) {
+      this.setData(
+        ip,
+        city,
+        timezone,
+        isp
+      );
+      this.setMap(
+        lat,
+        lng
+      );
+
+    },
+    setMap: function (lat, lng) {
       //init map
-      var map = L.map('map').
-      //render map
-      setView([alt, lat],
-        16);
-      L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-      //scale
-      L.control.scale().addTo(map);
+      if (!this.map) {
+        this.map = L.map('map', {
+          maxZoom: 14,
+          minZoom: 14,
+          touchZoom: false,
+          tap: false,
+          scrollWheelZoom: false,
+          zoomControl: false,
+          dragging: false
+        });
+      }
+      L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(this.map);
       //set marker
-      L.marker([alt, lat], {
-        draggable: true
-      }).addTo(map);
+      this.map.setView([lat, lng], 14);
+      L.marker([lat, lng], {
+        draggable: false
+      }).addTo(this.map);
     },
     setData: function (ip, location, timezone, isp) {
       this.ip.innerHTML = ip;
@@ -79,7 +102,7 @@ L.marker([-34.7653, -58.2128], {
   draggable: true
 }).addTo(map);
 
-//get altitud latitud
+//get altitud lngitud
 fetch("https://geo.ipify.org/api/v1", {
     apiKey: "at_nC3JfmQr40CQFHIWFXQnqBmPcUUsO",
     ipAddress: "8.8.8.8"
