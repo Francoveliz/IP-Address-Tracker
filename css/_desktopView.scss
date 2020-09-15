@@ -5,11 +5,15 @@
     margin: auto !important;
     min-width: 60rem;
     width: 80%;
-
+    padding: 0 !important;
 
     data__pair {
       width: 25%;
       margin: 0.5px;
+
+      &:last-child {
+        border: 0;
+      }
     }
   }
 
@@ -17,6 +21,7 @@
     min-height: 35rem;
     height: 100%;
     margin-top: -5rem;
+    width: 100%;
   }
 
   .input__container {

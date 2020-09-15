@@ -14,10 +14,9 @@ body {
 
 .home__background {
   z-index: -2;
-  background-image: url(../images/pattern-bg.png);
   background-size: cover;
   border: 1px solid transparent;
-
+  background-image: url(../images/pattern-bg.png);
 
   .home {
     display: flex;
@@ -69,9 +68,15 @@ body {
       border-radius: $borderRadius;
       padding: 1rem;
       z-index: 9999;
+      display: flex;
+      align-items: center;
+
 
       .data__pair {
         margin: 1.5rem 0;
+        border-right: 1px solid rgba(0, 0, 0, .2);
+        width: 25%;
+        padding: 0 1rem;
 
         .data__title {
           color: $darkGray;
@@ -81,9 +86,9 @@ body {
         }
 
         .data__data {
-          margin: .4rem;
+          margin: .5rem;
           font-weight: 700;
-          font-size: 1.1rem;
+          font-size: 1.3rem;
         }
       }
     }

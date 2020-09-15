@@ -7,14 +7,14 @@ html {
 body {
   font-size: 1rem;
   font-family: 'Rubik', sans-serif;
-  color: #000;
+  color: #1a1a1a;
 }
 
 .home__background {
   z-index: -2;
-  background-image: url(../images/pattern-bg.png);
   background-size: cover;
   border: 1px solid transparent;
+  background-image: url(../images/pattern-bg.png);
 }
 
 .home__background .home {
@@ -58,7 +58,7 @@ body {
 .home__background .home .input__container button {
   border-radius: 0 0.8rem 0.8rem 0;
   width: 3rem;
-  background: #000;
+  background: #1a1a1a;
   color: #fff;
   border: none;
   outline: none;
@@ -75,10 +75,19 @@ body {
   border-radius: 0.8rem;
   padding: 1rem;
   z-index: 9999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .home__background .home .data__container .data__pair {
   margin: 1.5rem 0;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  width: 25%;
+  padding: 0 1rem;
 }
 
 .home__background .home .data__container .data__pair .data__title {
@@ -89,9 +98,9 @@ body {
 }
 
 .home__background .home .data__container .data__pair .data__data {
-  margin: .4rem;
+  margin: .5rem;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 #map {
@@ -111,15 +120,20 @@ body {
     margin: auto !important;
     min-width: 60rem;
     width: 80%;
+    padding: 0 !important;
   }
   .data__container data__pair {
     width: 25%;
     margin: 0.5px;
   }
+  .data__container data__pair:last-child {
+    border: 0;
+  }
   #map {
     min-height: 35rem;
     height: 100%;
     margin-top: -5rem;
+    width: 100%;
   }
   .input__container {
     margin: auto;
