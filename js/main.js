@@ -31,6 +31,7 @@ let index = (function () {
       fetch("https://geo.ipify.org/api/v1?apiKey=" + apiKey + "&ipAddress=" + ip)
         .then(response => response.json())
         .then(data => {
+          console.log(data)
           this.renderHtml(
             data.ip,
             data.location.city,
