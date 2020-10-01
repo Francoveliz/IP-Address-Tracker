@@ -133,10 +133,10 @@ body {
     min-width: 60rem;
     width: 80%;
     padding: 0 !important;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
   }
   .data__container data__pair {
     width: 25%;
